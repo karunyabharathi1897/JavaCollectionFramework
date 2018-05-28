@@ -1,0 +1,37 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Map<Character,Integer> sc=new TreeMap<Character,Integer>();
+		Scanner ob=new Scanner(System.in);
+		String str=ob.next();
+		char a[]=str.toCharArray();
+		int n=str.length();
+		for(int i=0;i<n;i++)
+		{
+			Integer x=sc.get(a[i]);
+			if(sc.get(a[i])==null)
+			{
+				sc.put(a[i],1);	
+			}
+			else
+			{
+				sc.put(a[i],++x);
+			}
+		}
+		for(Map.Entry m:sc.entrySet()){
+			Character c=(Character)m.getKey();
+			Integer i=(Integer)m.getValue();
+			System.out.println(c+"-"+i);
+		}
+		
+	}
+}
